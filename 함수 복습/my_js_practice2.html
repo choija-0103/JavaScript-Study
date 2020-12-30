@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>12월 4주</title>
+</head>
+<body>
+<h1>
+</h1>
+<script>
+//익명함수는 이름이 없어서 호출을 못하는게 기본인데, 그럼에도 불구하고 익명함수를 호출하는 방법이 두가지
+// 첫째. 익명함수를 변수에 담았을 때.
+// 둘째. 즉시실행함수 용법을 썼을 때.
+
+function a ( b ){ // a함수 안에 인자로 함수(변수 b에 담긴 익명함수)를 넣고
+    b();
+}
+
+a ( function() { // a호출하여 실행이 가능하다.
+    console.log("안녕하세요.");
+} );
+</script>
+
+</body>
+</html>

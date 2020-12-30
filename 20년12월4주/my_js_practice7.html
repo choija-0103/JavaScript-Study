@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>12월 4주</title>
+</head>
+<body>
+<h1>문제)<br>
+    ^ 모양으로 별 찍기
+</h1>
+<script>
+while(1)
+{
+    var n = prompt("숫자를 입력하세요.");
+    if( isNaN(parseInt(n)) || n<=0 )
+    {
+        alert("다시 입력하세요.");
+        continue;
+    }
+    else break;
+}
+
+for( var i=0; i<n; i++ )
+{
+    var str = ""; //문자열 비워주기
+    for( var y=0; y<(n-i)-1; y++ ) str += " "; //바깥 공백 루프
+    str += "*"; //별찍기
+    for( var t=0; t<i*2-1; t++ ) str += " "; //안쪽 공백 루프
+    if( i != 0 ) str += "*"; //첫번째 루프를 제외하고 별찍기
+    console.log(str);
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>12월 첫째주</title>
+</head>
+<body>
+<h1>12월 첫째주</h1>
+<h5>
+    카페에서 손님에게 메뉴를 주문받는 프로그램을 작성하세요. 카페의 메뉴판은 다음과 같습니다.<br>
+    아메리카노 2500원<br>
+    카페라떼   4000원<br>
+    카페모카   4500원<br>
+    녹차라떼   4000원<br>
+    와플       2000원<br>
+    아이스티   3000원<br>
+    모든 메뉴는 "아이스"가 가능하고, 그 경우 500원이 추가됩니다.<br>
+    사용자가 "주문 끝"이라고 입력할때까지 반복해서 입력받고, 총 금액을 출력하세요.
+</h5>
+<script>
+var order;
+var total = 0;
+while ( true ) {
+    order = prompt("주문하실 음료를 모두 적어주세요. 아이스로 변경도 가능합니다. 모두 적고나서 '주문 끝'을 입력해주세요.")
+    if( order.indexOf("주문 끝") == 1)  break;
+    var length = order.length;//주문 리스트 전체 길이
+    orderList = order.substr(0, length-4);//주문 리스트 뽑기
+
+    if ( order.indexOf("아메리카노") !== -1 ){
+        var menuA;
+        menuA = parseInt(2500);
+        total += menuA;
+    }
+    else if ( order.indexOf("카페라떼") !== -1 ){
+        var menuC;
+        menuC = parseInt(4000);
+        total += menuC;
+    }
+    else if ( order.indexOf("카페모카") !== -1 ){
+        var menuM;
+        menuM = parseInt(4500);
+        total += menuM;
+    }
+    else if ( order.indexOf("녹차라떼") !== -1 ){
+        var menuG;
+        menuG = parseInt(4000);
+        total += menuG;
+    }
+    else if ( order.indexOf("와플") !== -1 ){
+        var menuW;
+        menuW = parseInt(2000);
+        total += menuW;
+    }
+    else if ( order.indexOf("아이스티") !== -1 ){
+        var menuT;
+        menuT = parseInt(3000);
+        total += menuT;
+    }
+    if ( order.indexOf("아이스") !== -1 ){
+        var menuIce;
+        menuIce = parseInt(500);
+        total += menuIce;
+    }
+}
+console.log(orderList);
+console.log(total + "원");
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>JavaScript 과제 3</title>
+</head>
+<body>
+<h1>별찍기</h1>
+<script>
+while( 1 ){
+    var n = prompt("별 갯수를 입력하세요.");
+    if( isNaN(parseInt(n)) ) {
+        alert("별의 갯수만 입력하세요.");
+        continue;
+    }
+    else{
+        break;
+    }
+}
+
+var i; //단 수
+var p; //별과 공백의 입력값
+
+for ( i=0; i<n; i+=1 ) {
+    var str = "";
+    for ( p=0; p<n-i-1; p+=1 ) {
+        str += " ";
+    }
+    str += "*";
+    for ( p=0; p<i; p+=1 ) {
+        str += " ";
+    }
+    for ( p=0; p<i-1; p+=1 ) {
+        str += " ";
+    }
+    if (p<i) {
+        str += "*";
+    }
+    console.log(str);
+}
+</script>
+</body>
+</html>

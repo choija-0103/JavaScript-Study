@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>12월 5주</title>
+</head>
+<body>
+<h1>객체(1)</h1>
+<script>
+// 객체를 생성해주는 함수 : 객체생성자함수
+
+// var person1 = {
+//     "name":"홍길동", // 객체 안에서 함수가 아닌것 == 프로퍼티
+//     "age":17,
+//     "gender":"남성",
+//     "hello":"반갑수다~"
+// }
+
+// var person2 = {
+//     "name":"김영희", // 객체 안에서 함수가 아닌것 == 프로퍼티
+//     "age":13,
+//     "gender":"여성",
+//     "hello":"안녕하세용~"
+// }
+
+// person1과 person2를 구성하는 index가 동일하다 == "시그니처가 동일하다" 라고 한다.
+// 객체를 일관된 방법으로 생성할 수 있다.
+// 객체생성자함수는 기본적으로 함수이지만 보통 함수처럼 사용(X). 반드시 new키워드를 붙여야한다.
+// new 키워드는
+// 1) { } 빈 객체 생성
+// 2) 함수 내부에서 this 키워드가 그 빈 객체를 가르키게 한다.
+// 3) 함수의 return값을 무시하고 this키워드로 만들어진 객체가 return된다. == 보통 return안씀
+
+function Person (name, age, gender, hello) {
+    // this = { };
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+    this.hello = hello;
+}
+
+var person1 = new Person("홍길동",17,"남성","반갑수다~");
+var person2 = new Person("김영희",13,"여성","안녕하세용~");
+
+console.log(person1);
+console.log(person2);
+
+// 객체생성자함수를 사용하면 index의 오타 발생으로 시그니처가 달라지는 문제 방지 가능
+// 객체를 여러개 생성할 때 index를 중복생성 하지 않아 코드를 줄일 수 있고
+// 같은 객체생성자함수로 만들어진 여러 객체들 간에 시그니처가 같음을 보장할 수 있다.
+// new키워드와 함께 쓰는 함수명의 첫글자를 대문자로 쓰는 관례가 있다.
+</script>
+
+</body>
+</html>

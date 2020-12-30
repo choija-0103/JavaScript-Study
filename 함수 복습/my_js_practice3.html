@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>12월 4주</title>
+</head>
+<body>
+<h1>
+</h1>
+<script>
+
+// A함수 안에 함수 리턴값은 A를 실행해야만 호출된다.
+function A (){
+    var age = 30; 
+    // A함수에서 선언한 변수는 그 내부에 속한 함수에도 유효함.
+    // 내부함수를 통해서만 함수A에서 선언한 변수에 접근할 수 있게 만드는 기법 = colser
+    // age변수가 너무 중요한 변수라 아무나 건드릴 수 없도록 보호하는 용도
+
+    return function(){ // age 변수를 사용하기 위한 함수
+        console.log("안녕하세요.", age++ );
+    }
+}
+
+var f = A(); // f에는 A함수 안의 익명함수가 리턴한 값이 들어간다.
+f();
+f();
+
+</script>
+
+</body>
+</html>

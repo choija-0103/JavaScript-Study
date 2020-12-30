@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>JavaScript 과제 2</title>
+<script>
+    while( true ){
+        year = prompt("연도를 입력하세요.");
+        if ( isNaN(parseInt(year)) || parseInt(year) < 0 ){
+            alert("연도를 입력해줘.");
+            continue;
+        } else {
+            break;
+        }
+    }
+    year = parseInt(year);
+    if ( year%4 == 0 && year%100 != 0 ){
+        console.log("윤년입니다");
+    }
+    else{
+        if ( year%400 == 0 ) {
+            console.log("윤년입니다");
+        }
+        else console.log("윤년이 아닙니다");
+    }
+</script>
+</head>
+<body>
+<h5>사용자로부터 연도를 입력받아, 윤년이면 1, 아니면 0을 출력하는 프로그램을 작성하시오.<br>
+    윤년은, 년도가 4의 배수이면서 100의 배수가 아니되 단 400의 배수인 경우에는 윤년입니다.<br>
+    2012년은 4의 배수이면서 100의 배수가 아니므로 윤년입니다.<br>
+    1900년은 4의 배수이면서 100의 배수이므로 윤년이 아닙니다.<br>
+    2000년은 4의 배수이면서 400의 배수이므로 윤년입니다.</h5>
+</body>
+
+ 
+
+</html>

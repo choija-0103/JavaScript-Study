@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>12월 5주</title>
+</head>
+<body>
+<h1>객체(1)</h1>
+<script>
+//배열은 인덱스가 정수로 이루어져 순서가 있는 배열이다. (순차배열)
+//객체는 배열의 일종이지만 인덱스가 숫자가 아닌 문자열이다.
+//객체는 인덱스가 숫자가 아니므로 앞뒤 좌우의 순서성이 없다.
+var obj = {
+    "name":"최자영",
+    "age":"29",
+    "job":"백수"
+}
+console.log(obj["job"]);// 객체 선택하기(1) []
+console.log(obj.job);// 객체 선택하기(2) .
+obj["address"]="안양";// 객체 추가하기(1) []
+obj.hobby="독서";// 객체 추가하기(2) .
+
+
+//객체순회하기(for in)
+for( var i in obj ){
+    console.log(obj[i]);
+}
+
+console["log"]("hi"); // == console.log("hi");
+</script>
+
+</body>
+</html>

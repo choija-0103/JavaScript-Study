@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>12월 4주</title>
+</head>
+<body>
+<h1>문제)<br>
+    사용자로부터 양의 정수를 하나 입력받아 다음과 같이 출력하는 프로그램을 작성하세요.<br>
+    ex) 입력이 7 인 경우<br>
+    *******<br>
+    &nbsp;******<br>
+    &nbsp;&nbsp;*****<br>
+    &nbsp;&nbsp;&nbsp;****<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;***<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</h1>
+<script>
+while(1)
+{
+    var n = prompt("숫자를 입력하세요.");
+    if( isNaN(parseInt(n)) || n<=0 )
+    {
+        alert("다시 입력하세요.");
+        continue;
+    }
+    else break;
+}
+
+for( var i=0; i<n; i++ )
+{
+    var str = "";
+    //공백 만들기 시작
+    for( var p=0; p<i; p++ ) str += " ";
+    //별 만들기
+    for( var t=0; t<n-i; t++ ) str += "*";
+    console.log(str);
+}
+
+</script>
+
+</body>
+</html>

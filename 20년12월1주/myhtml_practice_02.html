@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>12월 첫째주</title>
+</head>
+<body>
+<h1>12월 첫째주</h1>
+<script>
+var order; //주문
+var orderList; //주문리스트 나열
+var sum;
+var num1;
+var num2;
+var num3;
+while ( true ) {
+    order = prompt("주문하실 음료를 모두 적어주세요. 아이스로 변경도 가능합니다. 모두 적고나서 '주문 끝'을 입력해주세요.")
+    if( order.indexOf("주문 끝") == -1 ){
+        continue;
+    }
+    else{
+        console.log(order);
+        if ( order.indexOf("아메리카노") !== -1 ){
+            var a = order.substr(0, 5);
+            a += "2500";        
+            console.log(a);
+        }else if ( orderList == -1 ) {
+            orderList = order.indexOf("카페라떼")
+            var l = order.substr(0, 4);
+            l += "3000";        
+            console.log(l);
+        }else if ( orderList == -1 ) {
+            orderList = order.indexOf("녹차라떼");
+            var g = order.substr(0, 4);
+            g += "3500";
+            console.log(g);
+        }
+    }
+    break;
+}
+
+
+
+
+
+
+</script>
+</body>
+</html>

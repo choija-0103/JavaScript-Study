@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>12월 첫째주</title>
+</head>
+<body>
+<h1>12월 첫째주</h1>
+<h5>
+    과제)<br>
+    사용자가 0 을 입력할때까지 반복해서 정수를 입력받고,<br>
+    사용자가 0 을 입력하면 그때까지 입력된 모든 수의 총합/평균/최소값/최대값을 출력하세요.<br>
+    배열 사용 금지.    
+</h5>
+
+<script>
+var num; //입력값
+var sum = 0; // 합계
+var max = 0; // 최대값
+var min = 0; // 최소값
+var average = 0; //평균값
+var enter = 0; // 입력횟수
+
+while(1){
+    num = prompt("숫자를 입력하세요.");
+    if( num !== "0" ){
+        num = parseInt(num);
+        sum += num;
+        enter++;
+        average = sum/enter;
+        console.log(num);
+        console.log("합계" + "=" + sum);
+        console.log("평균값" + "=" + average);
+        
+        if( enter == 1 ) {
+            max = num;
+            min = num;
+        }
+        if( num > max ) max = num;
+        if( num < min ) min = num;
+        console.log("최대값" + max);
+        console.log("최소값" + min);
+        continue;
+    }
+    else{
+        break;
+    }
+}
+
+</script>
+</body>
+</html>

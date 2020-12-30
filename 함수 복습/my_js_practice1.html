@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>12월 4주</title>
+</head>
+<body>
+<h1>12월 23일 함수 복습  + 아래 문제 풀기</h1>
+
+<script>
+//사용자로부터 정수를 입력받는 함수 만들어 보기
+function promptInt()
+{
+    while(1){
+        var i = prompt("정수를 입력하세요."); //함수 안에서 만들어진 변수는 '지역변수'
+        if ( isNaN(parseInt(i)) == true ) { // == true가 빠져도 isNaN()이 true/false를 return 하기 때문에 올바른 조건식이 된다.
+            alert("정수를 올바르게 입력하세요.");
+            continue;
+        } else break;
+    }
+    i = parseInt(i);
+    return i;
+}
+
+function sum( a, b, c )
+{
+    return (a+b+c);
+}
+
+//함수 바깥에서 선언된 변수는 '전역변수'
+var num1 = promptInt(); // (*중요* 괄호쌍이 있다면 함수를 담은것이 아니다. 함수를 호출하고나서 도출 된 결과(return)값을 변수에 담은 것)
+var num2 = promptInt();
+var num3 = promptInt();
+var n = sum(num1,num2,num3);
+
+console.log("사용자가 입력한 세 숫자의 합은 ", n);
+
+
+//가변인자 사용법 arguments(사용자가 설정하지 않아도 기본적으로 있는 속성. 인자들의 배열)
+/*
+function sum()
+{
+    var ret = 0;
+    for(var y=0; y<arguments.length; y++){
+        ret += arguments[y];
+    }
+    return ret;
+}
+
+var num1 = promptInt(); //함수를 변수에 저장할 수 있다. 함수 바깥에서 선언된 변수는 '전역변수'
+var num2 = promptInt();
+var num3 = promptInt();
+
+console.log("사용자가 입력한 세 숫자에 1+2+3을 더한 값은 ", sum(num1,num2,num3,1,2,3)); //몇 개가 들어가든 전부 더해주는 함수가 된다.
+*/
+
+
+</script>
+
+</body>
+</html>

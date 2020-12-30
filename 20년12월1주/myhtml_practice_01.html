@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>12월 첫째주</title>
+</head>
+<body>
+<h1>계산기, 별찍기</h1>
+<script>
+
+
+var str = prompt("계산하고자 하는 수식을 입력하세요.")
+var opPos, op;
+
+//연산자의 위치 찾기
+opPos = str.indexOf("+"); 
+if ( opPos == -1 ) opPos = str.indexOf("-");
+if ( opPos == -1 ) opPos = str.indexOf("*");
+if ( opPos == -1 ) opPos = str.indexOf("/");
+
+
+//연산자를 구한다
+op = str.substr(opPos, 1);
+
+
+//연산 대상이 되는 숫자들을 각각 구한다.
+num1 = str.substring(0, opPos); //앞숫자
+num1 = parseInt(num1); //앞숫자를 정수로 바꿔준다.
+num2 = str.substring(opPos+1, str.length);//뒷숫자
+num2 = parseInt(num2); //뒷숫자를 정수로 바꿔준다.
+
+switch(op)
+{
+    case "+":
+        console.log(num1 + "+" + num2 + "=" + (num1 + num2));
+        break;
+    case "-":
+        console.log(num1 + "-" + num2 + "=" + (num1 - num2));
+        break;
+    case "*":
+        console.log(num1 + "*" + num2 + "=" + (num1 * num2));
+        break;
+    case "/":
+        console.log(num1 + "/" + num2 + "=" + (num1 / num2));
+        break;
+}
+
+
+
+</script>
+</body>
+</html>

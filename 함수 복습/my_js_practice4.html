@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>12월 4주</title>
+</head>
+<body>
+<h1>
+</h1>
+<script>
+
+// 재귀함수(재귀호출)
+// 함수 안에서 자기 자신을 다시 호출하는 것
+// 같은 형태의 상황을 반복해서 해결하고자 하는 경우에 적용할 수 있는 프로그래밍 기법
+// 실무에서는 알고리즘을 응용해야하는 특정 유형의 상황에서만 가끔 사용.
+
+function fn( n ){
+    console.log("호출된 숫자", n);
+    if( n>0 ) fn (n-1);
+    console.log("호출해준곳으로 돌아가기", n);
+}
+
+fn(3);
+
+</script>
+
+</body>
+</html>

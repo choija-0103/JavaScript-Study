@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>12월 첫째주</title>
+</head>
+<body>
+<h1>12월 첫째주</h1>
+<h5>
+    과제)<br>
+    사용자로부터 정수를 하나 입력받아 다음과 같이 출력하는 프로그램을 작성하세요.<br>
+    ex) 입력이 4 인 경우
+       *
+      * *
+     * * *
+    * * * *
+</h5>
+<script>
+while( 1 ){
+    var n = prompt("별 갯수를 입력하세요.");
+    if( isNaN(parseInt(n)) ) {
+        alert("별의 갯수만 입력하세요.");
+        continue;
+    }
+    else{
+        break;
+    }
+}
+var i;
+var p;
+for ( i=0; i<n; i++){
+    var str ="";
+    for ( p=0; p<n-i-1; p++){
+        str +=" ";
+    }
+    for ( p=0; p<i+1; p++){
+        str +=" *";
+    }
+    console.log(str);
+}
+
+
+</script>
+</body>
+</html>

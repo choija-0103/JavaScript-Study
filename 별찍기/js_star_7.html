@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>12월 4주</title>
+</head>
+<body>
+<h1>
+    *
+   ***
+  *****
+ *******
+*********
+ *******
+  *****
+   ***
+    *
+</h1>
+<script>
+while(1){
+    var num = prompt("숫자를 입력하세요.");
+    if( isNaN(parseInt(num)) || num < 0 ) {
+        alert("올바른 숫자를 입력해주세요.");
+        continue;
+    } else break;
+}
+for(var i=0; i<num; i+=1){
+    var str = "";
+    for( var s=0; s<num-i-1; s+=1 ){
+        str += " ";
+    }
+    for( var y=0; y<i*2+1; y+=1 ) {
+        str += "*";
+    }
+    console.log(str);
+}
+
+for( i=1; i<num; i+=1){
+    str = "";
+    for(  s=0; s<i; s+=1 ){
+        str += " ";
+    }
+    for(  y=0; y<(num*2-1)-(i*2); y+=1 ) {
+        str += "*";
+    }
+    console.log(str);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>12월 4주</title>
+</head>
+<body>
+<h1></h1>
+<!--p>
+[배열]
+과제)
+9개의 서로 다른 자연수가 주어질 때, 이들 중 최댓값을 찾고 그 최댓값이 몇 번째 수인지를 구하는 프로그램을 작성하시오.
+예를 들어, 서로 다른 9개의 자연수
+3, 29, 38, 12, 57, 74, 40, 85, 61
+이 주어지면, 이들 중 최댓값은 85이고, 이 값은 8번째 수이다.
+</p-->
+<script>
+var arr = [3,29,38,12,57,74,40,85,61];
+var max;
+
+//최대값 구하기
+for(var i=0; i<arr.length; i++){
+    if( max == undefined || max < arr[i] ) max = arr[i];    
+}
+console.log("배열 중 최대값은 "+max+"이고, 이 값은 "+(i-1)+"번째 수이다.");
+</script>
+
+</body>
+</html>

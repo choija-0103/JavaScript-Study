@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>12월 5주</title>
+</head>
+<body>
+<h1>객체(1)</h1>
+<script>
+// method and this
+
+var obj = {
+    "name":"최자영",
+    "age":"29",
+    "job":"백수",
+    "sayHello":function(){ // method == 객체 안에 들어간 함수
+        // this == method를 소유하고 있는 객체(obj) 자체를 뜻함
+        console.log(this)
+        console.log(this.name+" : 안녕하세요. "+this.age+"살 입니다.");
+    }
+}
+
+// method 호출하기
+// obj["sayHello"]();
+// obj.sayHello();
+
+// this가 method 안에 들어있지 않은 경우에는
+function fn(){
+    console.log(this); // this == 전역컨텍스트 객체 == window객체
+}
+fn();
+</script>
+
+</body>
+</html>

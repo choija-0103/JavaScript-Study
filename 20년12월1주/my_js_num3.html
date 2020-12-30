@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>12월 첫째주</title>
+</head>
+<body>
+<h1>12월 첫째주</h1>
+<h5>
+    과제)<br>
+    알파벳 a부터 z까지 나열되어 있는 문자열이 있다. 이 문자열을 이용하여 다음과 같이 출력하는 프로그램을 작성하세요.<br>
+                              z
+                             yz
+                            xyz
+                           wxyz
+                          uwxyz
+                           ...<br>
+     abcdefghijklmnopqrstuvwxyz
+</h5>
+<script>
+var alphabet = "abcdefghijklmnopqrstuvwxyz";
+var i;
+var p;
+var length = alphabet.length;
+length = parseInt(length); // length=26
+
+for( i=0; i<length; i+=1){
+    var str = "";
+    var index = alphabet.slice(-1);
+    //i=0  index = alphabet.slice(-1); z        i+1개의 알파벳
+    //i=1  index = alphabet.slice(-2); zy       i+1개의 알파벳
+    //i=2  index = alphabet.slice(-3); zyx      i+1개의 알파벳
+    //i=3  index = alphabet.slice(-4); zyxw     i+1개의 알파벳
+    for ( p=0; p<(length-i)/2; p++){
+        str +=" ";
+    }
+    for ( p=0; p<1; p++){
+        str += alphabet.slice(-(i+1));
+    }
+    console.log(str);
+}
+</script>
+</body>
+</html>

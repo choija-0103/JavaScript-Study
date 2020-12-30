@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>12월 4주</title>
+</head>
+<body>
+<h1>문제)<br>
+    사용자로부터 정수를 입력받아, 그 정수를 3자리마다 콤마가 찍힌 형태로 출력하세요. 음수일때에도 처리가 되어야 합니다.<br>
+    ex) 1234567 이 주어진 경우<br>
+    1,234,567<br>
+</h1>
+<script>
+
+while(1)
+{
+    var num = prompt("숫자를 입력하세요.");
+    if( isNaN(parseInt(num)) )
+        {
+            alert("올바른 숫자를 입력하세요.");
+            continue;
+        }
+    else break;
+}
+
+var len = num.length;
+var str = ""; //옮겨닮을 변수
+var count = 0; // 몇개의 수를 옮긴지 카운트
+for ( var i=len-1; i>-1; i-- )
+{
+    str = num[i] + str;
+    count += 1;
+    if(num[0]!="-")
+        {
+            if( count%3==0 && i!=0 ) str = "," + str; //음수가 아닐 경우의 조건
+        }
+    else
+        {
+            if( count%3==0 && i!=0 && i!=1 ) str = "," + str;
+        }
+}
+console.log(str);
+</script>
+
+</body>
+</html>

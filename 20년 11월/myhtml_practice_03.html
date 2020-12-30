@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>JavaScript 과제 3</title>
+</head>
+<body>
+<h5>
+사용자로부터 <b style="color:red">사칙연산자 1개와 피연산자 2개를 입력받아</b> 계산결과를 알려주는 프로그램을 작성하세요.<br>
+사용자가 입력하는 연산식은 [숫자 연산자 숫자] 순서로 <b style="color:red">띄어쓰기 없이 입력</b>되며,<br>
+숫자는 여러자리일수도 있고 연산자는 + - * / 로 정해져있다.<br><br>
+
+ex) "5+7" 이 입력된 경우<br>
+12<br>
+
+ex) "211-21" 이 입력된 경우<br>
+190</h5>
+<h6>빨갛게 표시된 부분은 if문에서 추가하지 못했음....</h6>
+<script>
+var number1;
+var number2;
+var oper;
+var calcul;        
+while(true){
+    calcul=prompt("숫자 2개와 연산자 1개의 계산식을 입력하세요");
+    if(isNaN(parseInt(calcul))){
+        console.log("계산식을 적으세요.");
+    }
+    else{
+        console.log(calcul);
+        if(calcul.indexOf('+')!==-1) {
+            var index=calcul.indexOf('+');
+            number1=calcul.substr(0,index);
+            number2=calcul.substr(index+1);
+            console.log(parseInt(number1)+parseInt(number2));
+        }else if(calcul.indexOf('-')!==-1){
+            var index = calcul.indexOf('-');
+            number1 = calcul.substr(0, index);
+            number2 = calcul.substr(index+1, calcul.length);
+            console.log(number1-number2);
+        }else if(calcul.indexOf('*') !== -1){
+            var index = calcul.indexOf('*');
+            number1 = calcul.substr(0, index);
+            number2 = calcul.substr(index + 1, calcul.length);
+            console.log(number1 * number2);
+        } else if (calcul.indexOf('/') !== -1) {
+            var index = calcul.indexOf('/');
+            number1 = calcul.substr(0, index);
+            number2 = calcul.substr(index + 1, calcul.length);
+            console.log(number1 / number2);
+        }
+    }
+    break;
+}
+</script>
+</body>
+</html>

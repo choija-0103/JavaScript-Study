@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>12월 첫째주</title>
+</head>
+<body>
+<h1>12월 첫째주</h1>
+<h5>
+    과제)<br>
+    사용자로부터 정수를 입력받아, 그 정수를 3자리마다 콤마가 찍힌 형태로 출력하세요. 음수일때에도 처리가 되어야 합니다.<br>
+    ex) 1234567 이 주어진 경우<br>
+    1,234,567
+</h5>
+<script>
+var num; // 입력값
+while(1){
+    num = prompt("정수를 입력하세요.");
+    if(isNaN(parseInt(num))){
+        alert("숫자 입력하세요.");
+        continue;
+    }
+    else{
+        break;
+    }
+}
+
+//문자열에서 1글자만 뽑아내기 이용하기
+//뒤에서부터 1글자씩 옮기고 콤마 찍기
+</script>
+</body>
+</html>

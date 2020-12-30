@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>12월 2주</title>
+</head>
+<body>
+<h1>12월 2주</h1>
+<h5>
+    과제)<br>
+    사용자로부터 정수를 입력받아, 그 정수를 3자리마다 콤마가 찍힌 형태로 출력하세요. 음수일때에도 처리가 되어야 합니다.<br>
+    ex) 1234567 이 주어진 경우<br>
+    1,234,567
+    
+</h5>
+<script>
+//문자열에서 1글자만 뽑아내기 이용하기
+//뒤에서부터 1글자씩 옮기고 콤마 찍기
+
+
+// 숫자 입력창 만들기
+while(1){
+    var num = prompt("숫자를 입력하세요.");
+    console.log(num);
+    if( isNaN(parseInt(num)) ){
+        alert("올바른 숫자를 입력하세요.");
+        continue;
+    } else {
+        break;
+    }
+}
+
+//뒤부터 1글자씩 숫자 얻고 담기(반복)
+var i; // 반복 횟수 변수
+var s = ""; // 1개 잘라서 담을 변수
+var index = "";
+var y; //자르고 남은 숫자들
+var end;
+
+for( i=0; i<num.length/3; i++){
+    index = num.substr(-3, num.length);
+    s = ","+index;
+    y = num.substr(0,num.length-3);
+    num = y;
+
+}
+
+console.log(y+s);
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
