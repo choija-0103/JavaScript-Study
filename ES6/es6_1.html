@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>1월 2주</title>
+</head>
+<body>
+<h1>ES6 문법 정리(1)</h1>
+<script>
+// 1) 문자열 템플릿
+var a = "안녕하세요";
+var b = "최자영입니다."
+
+console.log( a+"?"+b ); // 기존 문법
+console.log( `${a}?${b}` ); // ES6 템플릿 문법
+
+
+// 2) 구조분해할당(객체, 배열)
+var obj = {a:1,b:2,c:3,d:4};
+
+var c = obj.c;
+var d = obj.d;
+console.log(c,d); // 변수 선언으로 빼오기
+
+// es6에서는 특정 인덱스에 해당하는 값만 뽑아서 새 변수를 만들 수 있다.
+var {b,c} = obj; // 나는 obj에서 b,c만 볼꺼야!
+console.log(c);
+console.log(d);
+
+
+// 배열의 앞에서부터 n번째 요소까지 모아 새 변수를 만들 수 있다.
+var arr = [1,2,3,4,5,6,7,8,9];
+var [z,x,c,v] = arr; // z,x,c,v에 arr의 앞에서 4개까지의 값이 대입된다.
+console.log(z,x,c,v);
+
+// 기존의 obj객체가 갖고 있던 인덱스와 데이터 가져다가 넣기 obj2 === obj3
+var obj2 = { e:5, ...obj };
+var obj3 = { e:5, a:1, b:2, c:3, d:4 };
+
+console.log(obj2, obj3);
+
+// 기존의 arr배열이 갖고 있던 인덱스와 데이터 가져다가 넣기
+var arr2 = [10,11,12,13, ...arr]; // 위치는 앞 뒤 중간 상관없이 가능
+
+console.log(arr2);
+
+</script>
+
+</body>
+</html>

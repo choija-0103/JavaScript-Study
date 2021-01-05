@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>1월 2주</title>
+</head>
+<body>
+<h1>객체(2) window객체</h1>
+<script>
+
+var person1 = {name:"최자영", age:"30", gender:"여성"};
+
+// window객체
+function sayHello(msg, who){
+    console.log(msg+"-"+who, this);
+}
+// sayHello("너 자신을 알라","소크라테스"); // 문자열 두개가 쪼개어 들어가고 window객체 출력
+
+// function객체 사용법
+// 함수 내부에서 this키워드는 원래 상황에 따라 바뀌지만
+
+
+// call : 함수를 호출할 때 function객체.call() 메써드를 이용하여 호출하면, this키워드가 가르키는 대상(객체)을 강제로 바꿀 수 있다.
+sayHello.call(person1,"유레카","아르키메데스"); // this키워드가 person1을 가르킴
+
+
+// apply : function객체.call() 메써드의 응용버전, 함수의 인자가 쪼개져서 들어가는게 아니라, 배열로 묶여서 통으로 들어가는 경우 사용
+sayHello.apply(person1, ["유레카","아르키메데스"]); 
+
+
+// bind : 함수 내에서 this키워드와 함수에 들어가는 인자들 중 일부 혹은 전체를 특정 데이터로 고정해둔 새로운 함수를 만들어 리턴
+// react에서 많이 사용
+var fn = sayHello.bind(person1, "안녕하세요"); // this키워드는 person1, 첫번쨰 인자는 "안녕하세요"로 고정
+fn("자영"); //호출할 때 두번째 인자만 주어지면 된다.
+
+</script>
+
+</body>
+</html>

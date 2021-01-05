@@ -20,6 +20,8 @@ var max;
 
 //최대값 구하기
 for(var i=0; i<arr.length; i++){
+    //첫번째 입력 받았을 때 입력값은 undefined이므로, 그 값을 초기 max값으로 설정한다.
+    //다음 반복에서는 초기값과 새로 들어온 값을 비교하여 새 값이 크면 그 값을 최대값으로 한다.
     if( max == undefined || max < arr[i] ) max = arr[i];    
 }
 console.log("배열 중 최대값은 "+max+"이고, 이 값은 "+(i-1)+"번째 수이다.");

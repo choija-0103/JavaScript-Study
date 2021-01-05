@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object_2</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            "name":"최자영",
+            "age":30,
+            "job":"백수",
+            "sayHello":function(){ // 메써드(method)
+                console.log(this); // this => 메써드 자신이 소속된 객체를 나타냄
+                console.log(this.name+" : 안녕하세요"); // 이름대면서 인사하기
+            }
+        };
+        
+
+        // 전역 컨텍스트 객체
+        function fn()
+        {
+            console.log(this); // 객체에 속해있지 않은 함수에서의 this키워드 => 전역 컨텍스트 객체
+        }
+
+        fn(); // window객체를 나타냄
+    </script>
+</body>
+</html>

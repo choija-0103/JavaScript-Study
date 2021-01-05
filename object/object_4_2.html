@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>객체생성자 함수</title>
+</head>
+<body>
+<h1>객체생성자 함수</h1>
+<script>
+
+function Book(title, author, publisher, year, page)
+{
+    // this = {}
+    this.title = title; // 제목
+    this.author = author; // 저자
+    this.publisher = publisher; // 출판사
+    this.year = year; // 출판연도
+    this.page = page; // 페이지
+}
+
+var book1 = new Book("한국부자들의 부자일지","문승렬","한국경제신문","2007.09.01",222);
+var book2 = new Book("리더의조건","SBS스페셜 <리더의 조건> 제작팀","북하우스","2013.11.20",253);
+var book3 = new Book("시읽는밤","하상욱","예담","2015.09.18",234);
+var book4 = new Book("펠리컨브리프","존 그리샴","시공사","2004.04.30",325);
+var book5 = new Book("언어의 온도","이기주","말글터","2016.08.11",306);
+var book6 = new Book("당신,거기 있어줄래요?","기욤 뮈소","밝은세상","2007.04.20",332);
+
+
+console.log(book1);
+console.log(book2);
+console.log(book3);
+console.log(book4);
+console.log(book5);
+console.log(book6);
+</script>
+
+</body>
+</html>

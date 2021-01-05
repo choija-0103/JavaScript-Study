@@ -24,13 +24,13 @@ arr.forEach( function( v, i ){ // v(첫번째 인자)는 배열 순회, i(두번
 });
 
 // map(배열을 순회하면서 각 요소를 새 배열에 모아준다.)
-var newArr = arr.map( function( v, i ){
+var newArr = arr.map( function( v, i ){ // 새 배열을 담을 변수를 만든다.
     return i+"번째 칸에는 "+v+"가 들어있다.";
 });
 console.log(newArr);
 
 // filter(원래 배열에서 true인것을 모아 새 배열로 만든다.)
-var filterArr = arr.filter ( function( v, i ) {
+var filterArr = arr.filter ( function( v, i ) { // 새 배열을 담을 변수를 만든다.
     if( v%2 === 0 ) return true;
     else return false;
 });
