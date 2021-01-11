@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>back to top</title>
+    <link rel="stylesheet" href="css/accodion.css">
+</head>
+<body>
+    <div class="container">
+        <button id="btn-collapse">Collapse All</button>
+        <h2>FAQ</h2>
+        <section id="faq">
+          <div class="panel-question active">
+            <div class="panel-heading">
+              + Lorem ipsum dolor sit?
+            </div>
+            <div class="panel-body" id="thisone">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad aliquid voluptate fugit quaerat non molestiae quo magni soluta minima corporis! Soluta, ipsa et.</p>
+              <p>Quos quibusdam, nesciunt totam ullam quasi neque!</p>
+            </div>
+          </div>
+          
+          <div class="panel-question">
+            <div class="panel-heading">
+              + Lorem ipsum dolor sit?
+            </div>
+            <div class="panel-body">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad aliquid voluptate fugit quaerat non molestiae quo magni soluta minima corporis! Soluta, ipsa et.</p>
+              <p>Quos quibusdam, nesciunt totam ullam quasi neque!</p>
+            </div>
+          </div>
+          
+          <div class="panel-question">
+            <div class="panel-heading">
+              + Lorem ipsum dolor sit?
+            </div>
+            <div class="panel-body">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad aliquid voluptate fugit quaerat non molestiae quo magni soluta minima corporis! Soluta, ipsa et.</p>
+              <p>Quos quibusdam, nesciunt totam ullam quasi neque!</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <script>
+          var btnCollapse = document.getElementById('btn-collapse'), // btn-collapse
+              heading = document.getElementsByClassName('panel-heading'), // panel-heading
+              question = document.getElementsByClassName('panel-question'), // panel-qusetion
+              answer = document.getElementsByClassName('panel-body'); // panel-body
+
+          console.log(heading); // heading 배열
+
+          // heading click 할 일 만들기
+          for ( var i=0; i<heading.length; i++ ) { // 배열 순회하기
+            heading[i].addEventListener('click',function(ev){ // heading의 0부터 i번째 click 할 일
+              for ( var j=0; j<question.length; j++ ) { // question의 0부터 j번째 할 일
+                question[j].classList.remove('active');
+                ev.target.parentNode.classList.add('active'); // target.parentNode 클릭한것의부모찾기
+                activateBody();
+              }
+            });
+          }
+          
+          function activateBody(){
+            // 할 일 1) panel-body 모두 안보이도록
+            for ( var x=0; x<answer.length; x++){
+              answer[x].style.display = 'none';
+            }
+
+            // 할 일 2) active가 붙은 panel-question의 자식 panel-body 나타나도록
+            var activePanel = document.querySelector('.panel-question.active .panel-body');
+            activePanel.style.display='block';
+          }
+          activateBody();
+
+          // collapse all 버튼 클릭하면 answer 모두 안보이게 하기
+          btnCollapse.addEventListener('click', function(){
+            for( var i=0; i<answer.length; i++ ){
+              answer[i].style.display='none';
+            }
+          });
+      </script>
+</body>
+</html>
