@@ -9,43 +9,85 @@
     <script>
         var dateArr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
         var date = "";
-        var getDate_first = new window.Date(2021, 3, 1); // 출력할 달의 첫째날
-        var getDate_last = new window.Date(2021, 3, 30); // 출력할 달의 마지막날
+        var getDate_first = new window.Date(2021, 4, 1); // 출력할 달의 첫째날
+        var getDate_last = new window.Date(2021, 4, 31); // 출력할 달의 마지막날
         var firstDay = getDate_first.getDay(); // 첫번째 요일 (일요일0 ~ 토요일6)
         var lastDay = getDate_last.getDay(); // 마지막 요일
         var lastDate = getDate_last.getDate(); // 마지막 날짜
-
+        
         console.log( (getDate_first.getMonth()+1) + "월의 마지막 날짜는" + getDate_last.getDate() + "일 입니다.");
-        // console.log( "첫번째 요일은 " + firstDay + "입니다." ); 
-        // console.log( "마지막 요일은 " + lastDay + "입니다." ); 
+        console.log( "첫번째 요일은 " + firstDay + "입니다." ); 
+        console.log( "마지막 요일은 " + lastDay + "입니다." ); 
 
-        // 이 달의 1일의 요일을 구하여 그 요일만큼 [] 출력
+        
+        // 4,5) 이 달의 1일의 요일을 구하여 그 요일만큼 [] 출력
+        var frontArr = []; // 빈 배열에 앞 공백만큼 [] 만들기
         for( var u=0; u<firstDay; u+=1 ) {
-            dateArr.unshift("[]");
+            frontArr.unshift("[ ]");
         }
-        for ( var i=0; i<dateArr.length; i+=1 ) {
+        
+        var newArr = [... frontArr, ... dateArr]; // 앞 공백 붙여 새 배열 생성(수정용 배열)
+
+        for ( var i=0; i<newArr.length; i+=1 ) {
             // 1) 1부터 31까지 띄어쓰기로 구분해서 콘솔창에 출력
-            date += dateArr[i] + " "; 
+            date += newArr[i] + " "; 
+
             // 2) 1에서 31 까지 고정해서 출력했던 것을, 이 달의 마지막 날짜까지 출력
-            if( dateArr[i] == lastDate ){
-                // console.log(lastDate + firstDay);
-                var splice = dateArr.splice( lastDate + firstDay, dateArr.length );
+            if( newArr[i] == lastDate ){
+                var splice = newArr.splice( lastDate + firstDay, newArr.length );
                 
-                // 마지막 날짜를 출력한 뒤에, 그 마지막 날짜가 토요일이 아니면, 그 주의 토요일까지 빈칸으로 채워서 출력
+                // 6) 마지막 날짜를 출력한 뒤에, 그 마지막 날짜가 토요일이 아니면, 그 주의 토요일까지 빈칸으로 채워서 출력
                 if ( lastDay !== 6 ) { 
                     for ( var p=0; p<7-lastDay-1; p+=1 ) {
-                        dateArr.push("[]");
+                        newArr.push("[ ]");
                     }
                 }
             }
             
-            if ( (dateArr[i]+firstDay)%7 == 0 ) { // 5(금요일)만큼을 포함하여 7일씩 줄바꿈
+            if ( (newArr[i]+firstDay)%7 == 0 ) { // 3) 5(금요일)만큼을 포함하여 7일씩 줄바꿈
                 date += "\n";
             }
         }
 
         console.log(date);
-        console.log(dateArr);
+        console.log(dateArr); // 기본 배열
+        console.log(newArr); // 앞,뒤 공백 붙인 배열
+
+        var calendarBox = document.createElement("div");
+        var month = document.createElement("div");
+        var bodies = document.getElementsByTagName("body");
+        var dayUl = document.createElement("ul");
+        bodies[0].appendChild( calendarBox );
+        calendarBox.appendChild( month );
+        calendarBox.appendChild( dayUl );
+        
+        calendarBox.style.width = "400px";
+        calendarBox.style.height = "auto";
+        calendarBox.style.margin = "0";
+        calendarBox.style.padding = "50px 0";
+        calendarBox.style.backgroundColor = "#dfdfdf";
+        month.setAttribute("class", "month");
+        month.innerHTML = (getDate_first.getMonth()+1) + "월";
+        month.style.marginBottom = "30px";
+        month.style.textAlign = "center";
+        dayUl.style.width = "90%";
+        dayUl.style.listStyle = "none";
+        dayUl.style.textAlign = "center";
+        dayUl.style.padding = "0";
+        dayUl.style.margin = "0 auto";
+        for( var f=0; f< newArr.length; f+=1 ){
+            var dayLi = document.createElement("li");
+            dayUl.appendChild( dayLi );
+            dayLi.innerHTML = newArr[f]; 
+            dayLi.style.width = "calc(14.2% - 2.33px)";
+            dayLi.style.height = "auto";
+            dayLi.style.padding = "3px 0 ";
+            dayLi.style.display = "inline-block";
+            dayLi.style.margin = "1px";
+            dayLi.style.boxSizing = "border-box";
+            dayLi.style.backgroundColor = "#fff";
+        }
+
     </script>
 </body>
 </html>
