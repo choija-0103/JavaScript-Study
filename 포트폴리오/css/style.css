@@ -1,0 +1,241 @@
+
+/*main*/
+#wrap{position:relative}
+#menu{position:absolute; width:100%; height:100vh; z-index:3; left: -100%; top:0; background:#fff; transition: 0.3s all ease-in-out;}
+#menu.on{z-index: 8; left: 0}
+#wrap.on{height:100vh; overflow: hidden;}
+#menu h6{position:absolute; left:0; top:40px;}
+#menu ul{position: absolute; top:50%; left:50%; transform: translate(-50%,-50%); text-align: center;}
+#menu ul li{line-height:1;}
+#menu ul li + li{margin-top:63px;}
+#menu ul li a{font-size:50px; font-weight:900; color:#333}
+#menu ul li:hover > a{color:#fcd500}
+/* #menu:before{position:absolute; left:0; content:""; width:1200px; height:100%; background:#fff url(../images/menu_on_bg.png) no-repeat;} */
+#menu i{position:absolute; right:0; top:40px; right:30px;}
+#ico_menu {
+  position: absolute;
+  right:0;
+  top:15px;
+  width: 27px;
+  height: 27px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .3s ease-in-out;
+  -moz-transition: .3s ease-in-out;
+  -o-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+}
+
+#ico_menu span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: rgb(38, 38, 38);
+  /* border-radius: 5px; */
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .3s ease-in-out;
+  -moz-transition: .3s ease-in-out;
+  -o-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+#ico_menu span:nth-child(1) {
+  top: 0px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+#ico_menu span:nth-child(2) {
+  top: 10px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+#ico_menu span:nth-child(3) {
+  top: 20px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+#ico_menu.open{
+  z-index: 10;
+}
+#ico_menu.open span:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 0px;
+  left: 8px;
+}
+
+#ico_menu.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+#ico_menu.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 19px;
+  left: 8px;
+}
+
+/* .headertext{position:absolute; background:url(../images/headertext.png) center no-repeat; background-size:cover; width:197px; height:15px; top:60px; left:0; right:0; margin:0 auto;} */
+#header{position:fixed; width:100%; height: 54px; background-color: #fff; border-bottom: 1px solid #dbdbdb; z-index: 5; top:0; left:0;}
+#header.on{position: relative; z-index: 10; border-bottom:none}
+#header.on h1{display: none;}
+#header .header_inner{position:relative; width: 935px; height:auto; margin: 0 auto}
+#header h1{position:absolute; left:0; top:5px}
+#header h1 a{color:#333; font-family: 'Exo', sans-serif}
+#header i{position:absolute; right:0;}
+
+#content_wrap{width: 935px; margin: 80px auto 100px;}
+#content_wrap.on{margin:26px auto 100px}
+#content{position:relative; overflow:hidden; width:100%}
+#content .conbox{position:relative; float:left; width: calc(100%/3); height: 293px; float:left; text-align:center; background-size:cover;}
+#content .conbox::before{content:''; position: absolute; left:0; top:0; width:100%; height:100%; background-color: rgba(0,0,0,0.1); }
+#content .conbox h3{display:none; font-size:26px; color:#fff; font-weight:bold; line-height:38px}
+#content .conbox .h3_p{font-size:14px; color:#fff; line-height:1; margin-top:15px; font-family: 'Exo Thin', sans-serif;}
+#content .conbox .content_text{position: absolute; width:90%; top:50%; left:50%; transform: translate(-50%,-50%)}
+#content .conbox .content_text ul{margin-top:10px}
+#content .conbox .content_text ul li{color:#fff}
+
+#content > div:nth-child(1){background:url(../images/content_01.jpg) center no-repeat; background-size:cover}
+#content > div:nth-child(2){background:url(../images/content_02.jpg) center no-repeat; background-size:cover}
+#content > div:nth-child(3){background:url(../images/content_03.jpg) center no-repeat; background-size:cover}
+#content > div:nth-child(4){background:url(../images/content_04.jpg) center no-repeat; background-size:cover}
+#content > div:nth-child(5){background:url(../images/content_05.jpg) center no-repeat; background-size:cover}
+#content > div:nth-child(6){background:url(../images/content_06.jpg) center no-repeat; background-size:cover}
+#content > div:nth-child(7){background:url(../images/content_07.jpg) center no-repeat; background-size:cover}
+#content > div:nth-child(8){background:url(../images/content_08.jpg) center no-repeat; background-size:cover}
+#content > div:nth-child(9){background:url(../images/content_09.jpg) center no-repeat; background-size:cover}
+#content > div:nth-child(10){background:url(../images/content_10.jpg) center no-repeat; background-size:cover}
+#content > div:nth-child(11){background:url(../images/content_11.jpg) center no-repeat; background-size:cover}
+#content > div:nth-child(12){background:url(../images/content03.jpg) center no-repeat; background-size:cover}
+#content > div:hover > .content_ov{opacity: 1; background:#0095f6; transition: 0.5s all;}
+.content_ov{position:relative; opacity: 0; position:absolute;width:100%;height:100%;top:0}
+
+.content_ov h4{font-size: 25px;line-height:32px;color:#fff;font-weight:bold;}
+.content_ov .h4_p a{display:block; margin-top:20px;color:#fcd500;font-weight:bold;line-height:1;font-style: normal;font-weight: 600;font-size:13px;}
+
+
+#footer{position:relative; width:935px; margin:0 auto; height:190px; font-family: 'Nanum Gothic', sans-serif;}
+.foottxet{text-align: center;}
+.foottxet a{color:#333; line-height:1}
+.foottxet .info{font-weight:bold; font-size:13px;color:#333; }
+.foottxet span{display:inline-block; margin-top:9px; font-size:12px; }
+.foottxet span + span{margin-left:24px;}
+.copy_footer{display:none;}
+#back-to-top{
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  cursor: pointer;
+  right: 6%;
+  padding: 0 10px;
+  height: 35px;
+  line-height: 35px;
+  font-size: 13px;
+  background: #0095f6;
+  color: #fff;
+  border-radius: 9px;
+  border: none;
+  opacity: 0;
+  transition: 0.5s opacity;
+}
+
+#back-to-top.on{
+  opacity: 1;
+}
+
+/********************about css****************/
+#sub_content{display:none; opacity: 0; position:absolute; left:100%; text-align:center;  padding:0 20px; transition: 0.5s all;}
+#sub_content.on{position:static; display: block; opacity: 1;}
+#sub_content:before{position:absolute; content:"CHOI JA YOUNG"; opacity:0.3; left:50%; top:50%; transform:translate(-50%,-50%); font-size:160px; font-family:'NanumSquare ExtraBold', 'ë‚˜ëˆ”ìŠ¤í€˜ì–´ ExtraBold'; color:#dedede; line-height:1;}
+#sub_content h2{position:relative; color:#000; font-size:60px; font-weight:bold; line-height:1; margin-top:200px}
+#sub_content h2 span{color:#0095f6;}
+#sub_content .con01{margin-top:100px;}
+#sub_content .con01 li{text-align:left; font-size:18px;color:#151515;}
+#sub_content .con01 li + li{margin-top:100px;}
+.subtxt{font-size:32px; color:#0095f6; font-weight:bold; font-family: 'Exo', sans-serif; line-height:1; margin-bottom:60px;}
+.con01 ul li{overflow: hidden;}
+.con01 ul li dl{display:table; float: left;}
+.con01 ul li dl + dl{float: right;}
+.con01 ul li dl dt{display:table-cell; vertical-align:top; font-size:22px; color:#000; font-weight:bold; font-family: 'Exo', sans-serif; line-height:1; margin-bottom:20px; width:145px}
+.con01 ul li dl dd{display:table-cell; vertical-align:top; font-size:18px;  line-height:28px; }
+
+
+.con02{text-align:center; margin:140px auto;}
+div.con02 dl{display:inline-block; font-size:0; color:#151515;}
+div.con02 dl + dl{margin-left:8%}
+div.con02 dl dt {font-size:23px;  font-weight:bold; line-height:1;  font-family: 'Exo', sans-serif; }
+div.con02 dl dt:after{content:""; display:block; margin:0 auto; margin-top:20px;width:15px; height:1px; background:#151515;}
+div.con02 dl dd {font-size:18px; line-height:1; margin-top:30px;}
+
+.con03{margin:100px auto; text-align:left; overflow:hidden;}
+div.con03 span{float:left; display:block; width:670px;}
+div.con03 dl{display:table; font-size:23px; color:#151515; /*margin-top:100px;*/}
+div.con03 dl dt{display:table-cell; width:170px; font-size:23px; line-height:1; font-weight:bold; font-family: 'Exo', sans-serif;}
+div.con03 dl dd{display:table-cell; font-size:18px; line-height:32px;}
+div.con03 dl + dl{margin-top:70px;}
+
+#map{margin:0 auto; display:table; margin-top:140px; }
+#map h4{display:table-cell; vertical-align:middle; width:160px; font-size:23px; line-height:1; font-weight:bold; font-family: 'Exo', sans-serif; color:#151515; }
+#map span{display:table-cell; vertical-align:middle; font-size:18px; color:#151515; line-height:1;}
+#daumRoughmapContainer1545122191666{width:1920px; height:650px; margin-top:40px;}
+.root_daum_roughmap .wrap_map{height:650px !important;}
+
+
+@media screen and (max-width : 1200px) {
+
+
+@media screen and (max-width : 991px){
+/****************main**************/
+#wrap{position:relative;}
+#header .header_inner{width: 100%;}
+#header h1{left:20px}
+#ico_menu{right:20px}
+#content_wrap{width:100%}
+#content{padding:0 20px}
+#content .conbox{height:29.56vw}
+#content .conbox h3{font-size:2.62vw; line-height:3.83vw}
+#footer{width:100%}
+
+}
+
+@media screen and (max-width : 767px){
+#content .conbox{width:calc(100%/2); height: 44.56vw;}
+#content .conbox h3{font-size: 3.91vw; line-height:5.86vw;}
+}
+
+
+@media screen and (max-width : 640px){
+#content .conbox{width:100%; height:83.5vw}
+#content .conbox h3{font-size: 6.25vw; line-height:8.59vw;}
+.subtxt{font-size:9.25vw; margin-bottom:9.37vw;}
+#sub_content .con01 li, div.con03 dl dd{font-size:4.25vw}
+#sub_content div dl dt{margin-bottom:6.25vw;}
+.con03{margin:15.62vw auto}
+div.con03 dl, div.con03 dl dt{display: block;}
+div.con03 dl + dl{margin-top:10.93vw}
+div.con03 dl dt{width:auto}
+#sub_content:before{font-size:25vw}
+#menu ul li a{font-size:7.81vw}
+#menu ul li + li{margin-top:9.84vw}
+}
